@@ -4,6 +4,14 @@ local gomt = {}
 local goas = astar
 gomt.__index = gomt
 
+local function shallow_copy(t)
+  local t2 = {}
+  for i, v in pairs(t) do
+    t2[i] = v
+  end
+  return t2
+end
+
 function gomt:setGoal()
 end
 
