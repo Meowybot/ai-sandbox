@@ -14,7 +14,7 @@
 local M = {}
 M.__index = M
 
-local BinaryHeap = require('binaryheap')
+local BinaryHeap = require('lib.astar.binaryheap')
 
 function M.new(...)
   local obj = setmetatable({}, M)
