@@ -22,7 +22,7 @@ function goap.new(statess, actionss, goalss)
     goals = (goalss or {})
   }, gomt)
   newobj.w = {}
-  for i, v in pairs(actions) do
+  for i, v in pairs(actionss) do
     newobj.w[i] = {}
     for j, _ in pairs(v.p) do
       newobj.w[i][j] = 1
