@@ -9,6 +9,14 @@ gomt.__index = gomt
 
 goap.customtypes = {}
 
+local function shcopy(t)
+  local t2 = {}
+  for i, v in pairs(t) do
+    t2[i] = v
+  end
+  return t2
+end
+
 local function deep_copy(t)
   local t2 = {}
   for i, v in pairs(t) do
@@ -42,7 +50,7 @@ end
 
 function goap.new(statess, actionss, goalss)
   local newobj = setmetatable({
-    states = (statess or {}),
+    states = (deep_copy(statess) or {}),
     actions = (actionss or {}),
     goals = (goalss or {})
   }, gomt)
