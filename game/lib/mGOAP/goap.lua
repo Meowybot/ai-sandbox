@@ -58,11 +58,10 @@ end
 function gomt:delGoal(id)
 end
 
-function goap.new(statess, actionss, goalss)
+function goap.new(statess, actionss)
   local newobj = setmetatable({
     states = (deep_copy(statess) or {}),
     actions = (actionss or {}),
-    goals = (goalss or {}),
     currgoals = {}
   }, gomt)
   newobj.w = {}
