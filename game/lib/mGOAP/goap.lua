@@ -48,11 +48,22 @@ function goap.delPreset(nameot, ...)
   end
 end
 
+function gomt:setState(i, j, v)
+  self.states[i][j] = v
+end
+
+function gomt:addGoal(id, goal)
+end
+
+function gomt:delGoal(id)
+end
+
 function goap.new(statess, actionss, goalss)
   local newobj = setmetatable({
     states = (deep_copy(statess) or {}),
     actions = (actionss or {}),
-    goals = (goalss or {})
+    goals = (goalss or {}),
+    currgoals = {}
   }, gomt)
   newobj.w = {}
   for i, v in pairs(actionss) do
